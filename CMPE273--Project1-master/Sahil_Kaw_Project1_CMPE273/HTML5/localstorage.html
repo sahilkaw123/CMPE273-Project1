@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>LocalStorage</title>
+  <meta charset="UTF-8">
+<meta name="Viewport" content="width=device-width" />
+<h1> LocalStorage Example</h1>
+</head>
+
+
+
+
+
+<body>
+
+<script>
+
+function init() {
+var suppLocal =(('localStorage' in window) && window['localStorage'] != null);
+if (!suppLocal){
+  document.getElementById('info').innerHTML = "<p>Browser Not Support LocalStorage</p>";
+  return;
+}
+
+if(window.localStorage.length !=0){
+  document.getElementById('fName').value = window.localStorage.getItem('fName');
+  document.getElementById('lName').value = window.localStorage.getItem('lName');
+  document.getElementById('Addr').value = window.localStorage.getItem('Addr');
+  document.getElementById('City').value = window.localStorage.getItem('City');
+  document.getElementById('State').value = window.localStorage.getItem('State');
+  document.getElementById('PostalCode').value = window.localStorage.getItem('PostalCode');
+  document.getElementById('Phone').value = window.localStorage.getItem('Phone');
+}
+}
+
+function storeContent(fNm, lNm, Add,Ct,St,pCode,phn){
+  window.localStorage.setItem("fName", fNm);
+  window.localStorage.setItem("lName", lNm);
+  window.localStorage.setItem("Addr", Add);
+  window.localStorage.setItem("City", Ct);
+  window.localStorage.setItem("State", St);
+  window.localStorage.setItem("PostalCode", pCode);
+  window.localStorage.setItem("Phone", phn);
+
+}
+
+function clearContent(strToStore){
+  window.localStorage.clear();
+
+}
+window.onload = init;
+
+
+</script>
+<h2> Application Form </h2>
+<div>
+  <form action="" method="post" id="info">
+    <fieldset name="Local" id="Storage">
+      <legend> Personal Data</legend>
+      <p><label id="Fname" for="fName"> First Name: </label>
+        <input id="fName" name="fName" /></p>
+        <p><label id="Lname" for="lName"> Last Name: </label>
+          <input id="lName" name="lName" /></p>
+          <p><label id="Addrlabel" for="Addr"> Address: </label>
+            <input id="Addr" name="Addr" /></p>
+            <p><label id="CLabel" for="City"> City: </label>
+              <input id="City" name="City" /></p>
+              <p><label id="SLabel" for="State"> State: </label>
+                <input id="State" name="State" /></p>
+                <p><label id="PLabel" for="PostalCode"> Postal Code: </label>
+                  <input id="PostalCode" name="PostalCode" /></p>
+                <p><label id="PhLabel" for="Phone"> Phone No: </label>
+                  <input id="Phone" name="Phone" /></p>
+                  <input type = "button" value="save" onclick = "storeContent(
+                  document.querySelector('#fName').value,
+                  document.querySelector('#lName').value,
+                  document.querySelector('#Addr').value,
+                  document.querySelector('#City').value,
+                  document.querySelector('#State').value,
+                  document.querySelector('#PostalCode').value,
+                  document.querySelector('#Phone').value
+                  )">
+                  <input type ="button" value="clear" onclick="clearContent()">
+                </fieldset>
+              </form>
+            </div>
+
+
+
+
+</body>
+
+
+</html>

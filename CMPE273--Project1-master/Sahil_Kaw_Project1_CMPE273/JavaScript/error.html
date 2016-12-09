@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><h1><center>Error Usage</center></h1></head>
+<style>
+body {
+    background-color: green;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+</style>
+<body>
+
+<script>
+function validN() {
+    var error1;
+var x;
+    error1 = document.getElementById("error1");
+    error1.innerHTML = "";
+    x = document.getElementById("d1").value;
+    try {
+        if(x == "") throw "Please input Age";
+        if(isNaN(x)) throw "Age should be a number";
+        x = Number(x);
+        if(x > 60) throw "Not eligible";
+        if(x < 20) throw "Not eligible";
+
+    }
+    catch(err) {
+        error1.innerHTML = "Message: " + err + ".";
+    }
+    finally {
+        document.getElementById("d1").value;
+    }
+}
+</script>
+<p>Please input your age:</p>
+
+Age<input id="d1" type="text" onkeyup="validN()"/>
+
+<p id="error1"></p>
+</body>
+</html>

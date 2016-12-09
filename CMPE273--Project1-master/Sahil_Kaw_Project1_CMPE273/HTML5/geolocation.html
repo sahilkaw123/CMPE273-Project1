@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GEOLOCATION</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPeCWF4pwsmutWXBl0w7JXRz0L6UN7iKY&callback=initMap"
+    async defer></script>
+
+<script>
+
+navigator.geolocation.getCurrentPosition(success, failure);
+
+function success(position) {
+  // Fetch the coordinates
+  var poslat = position.coords.latitude;
+  var poslong = position.coords.longitude;
+  document.getElementById("lat").innerHTML = poslat;
+  document.getElementById("long").innerHTML = poslong;
+
+  // Google API ready latitude and longitude string
+
+  var dir = new google.maps.LatLng(poslat, poslong);
+
+  //Setting up our Google map object
+
+  var mapOptions = {
+    zoom: 16,
+    center: dir,
+    myTypeId: google.maps.MapTypeId.ROADMAP
+
+  }
+
+  //creating a Map
+
+  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+}
+
+function failure(){
+    alert("ERROR: Co-ordinates not available");
+}
+
+
+</script>
+<style>
+html, body {
+      height: 85%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 85%;
+    }
+
+
+</style>
+<body>
+
+  <!--Map would be here -->
+  <div id ="map">
+
+  </div>
+  <h1>Your current coordinates are</h1>
+  Latitude<div id = "lat"></div></br></br>
+  Longitude<div id = "long"></div></br></br>
+
+  <!--Longitude and Latitude -->
+</body>
+
+
+</html>

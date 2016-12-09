@@ -1,0 +1,141 @@
+<html>
+
+
+      <meta charset="utf-8">
+      <title>function thype</title>
+<head><h1><center>Order Menu
+</center></h1></head>
+<style>
+body {
+    background-color: orange;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+</style>
+<script>
+
+function func6(){
+
+var x = document.getElementById("mySelect").value;
+
+          if (x == "Pizza"){
+
+document.getElementById("demo1").innerHTML = "Please Select Toppings from the below list ";
+          func1();
+        }
+
+if ( x == "Burger"){
+document.getElementById("demo1").innerHTML = "Please Select Toppings from the below list ";
+
+
+          func2();
+}
+if (x == "PanCake"){
+document.getElementById("demo1").innerHTML = "Please Select Toppings from the below list ";
+
+          func3();
+}}
+
+function func1(){
+document.getElementById("value1").value = "$7";
+}
+
+function func2(){
+document.getElementById("value1").value = "$3";
+}
+
+function func3(){
+document.getElementById("value1").value = "$5";
+}
+
+function func7(){
+
+var x = document.getElementById("mySelect").value;
+
+var y = document.getElementById("toSelect").value;
+
+
+if (x == "Pizza"){
+if(y=="Cheese"){
+          func8();
+}
+if(y=="Olives"){
+func9();
+        }}
+
+if (x == "Burger"){
+if(y=="Cheese"){
+          func10();
+}
+if(y=="Olives"){
+func11();
+        }}
+
+if (x == "PanCake"){
+if(y=="Cheese"){
+          func12();
+}
+if(y=="Olives"){
+func13();
+        }}
+
+}
+
+
+function func8(){
+document.getElementById("value1").value = "$7 + $1 = $8";
+
+}
+
+function func9(){
+document.getElementById("value1").value = "$7 + $3 = $10";
+
+}
+function func10(){
+document.getElementById("value1").value = "$3 + $1 = $4";
+
+}
+function func11(){
+document.getElementById("value1").value = "$3 + $3 = $6";
+}
+
+function func12(){
+document.getElementById("value1").value = "$5 + $1 = $6";
+
+}
+function func13(){
+document.getElementById("value1").value = "$5 + $3 = $8";
+}
+
+
+</script>
+
+
+<body onload="init()">
+  <br><br><br>
+Food Type<br>
+<select id="mySelect" onchange="func6()">
+      <option value="Select">Choose Food
+      <option value="Pizza">Pizza
+      <option value="Burger">Burger
+      <option value="PanCake">PanCake
+      </select><br>
+      <p id="demo1"></p>
+
+<br>
+<br><br>
+Topping<br>
+<select id="toSelect" onchange="func7()">
+      <option value="Select">Choose Toppings
+      <option value="Cheese">Cheese
+      <option value="Olives">Olives
+      </select><br>
+      <p id="demo2"></p>
+<br><br>
+<h3>Total Cost </h3> <br>
+Cost&nbsp&nbsp<input id ="value1" type = "text"  readonly/>&nbsp&nbsp&nbsp<br><br>
+
+</body>
+</html>

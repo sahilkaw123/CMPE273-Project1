@@ -1,0 +1,157 @@
+<html>
+
+
+      <meta charset="utf-8">
+      <title>function thype</title>
+<head><h1><center>Currency Equivalent
+</center></h1></head>
+<style>
+body {
+    background-color: cyan;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+</style>
+<script>
+
+function func1(){
+
+var y = document.getElementById("value").value
+var x = document.getElementById("mySelect").value;
+          if (x == "Input Currency Type"){
+          document.getElementById("value").innerHTML = "Please Select one item from the list to see the price ";
+        }
+if ( x == "USD"){
+
+
+          func2(y);
+}
+if (x == "GBP"){
+
+          func3(y);
+}
+if (x == "EUR"){
+
+          func4(y);
+}
+if (x == "CAD"){
+
+          func5(y);
+}
+
+
+
+}
+
+function func2(val){
+
+if(val<=0){
+document.getElementById("demo").innerHTML = "Please Enter value greater than 0";
+}
+
+if(val>0){
+var eur = val *1.2543;
+var gbp = val *1.1433;
+var cad = val *0.8323;
+var usd = val *1;
+document.getElementById("value1").value = usd;
+document.getElementById("value2").value = gbp;
+document.getElementById("value3").value = eur;
+document.getElementById("value4").value = cad;
+
+}
+}
+
+function func3(val){
+
+if(val<=0){
+document.getElementById("demo").innerHTML = "Please Enter value greater than 0";
+}
+
+if(val>0){
+var eur = val *1.12;
+var gbp = val *1;
+var cad = val *0.7323;
+var usd = val *0.9;
+document.getElementById("value1").value = usd;
+document.getElementById("value2").value = gbp;
+document.getElementById("value3").value = eur;
+document.getElementById("value4").value = cad;
+
+}
+}
+
+function func4(val){
+
+if(val<=0){
+document.getElementById("demo").innerHTML = "Please Enter value greater than 0";
+}
+
+if(val>0){
+var eur = val *1.0;
+var gbp = val *.9822;
+var cad = val *0.7323;
+var usd = val *0.9676;
+document.getElementById("value1").value = usd;
+document.getElementById("value2").value = gbp;
+document.getElementById("value3").value = eur;
+document.getElementById("value4").value = cad;
+
+}
+}
+
+function func5(val){
+
+if(val<=0){
+document.getElementById("demo").innerHTML = "Please Enter value greater than 0";
+}
+
+if(val>0){
+var eur = val *1.3543;
+var gbp = val *1.2433;
+var cad = val *1.0;
+var usd = val *1.111;
+document.getElementById("value1").value = usd;
+document.getElementById("value2").value = gbp;
+document.getElementById("value3").value = eur;
+document.getElementById("value4").value = cad;
+
+}
+}
+
+</script>
+
+
+<body onload="init()">
+  <br><br><br>
+Input Value&nbsp&nbsp&nbsp&nbsp<input id ="value" type = "text" required /><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<select id="mySelect" onchange="func1()">
+      <option value="Select">Input Currency Type
+      <option value="USD">USD
+      <option value="GBP">GBP
+      <option value="EUR">EUR
+      <option value="CAD">CAD
+      </select><br>
+      <p id="demo"></p>
+
+<br>
+<br><br>
+<h3>Converted Currency Value </h3> <br>
+USD&nbsp&nbsp<input id ="value1" type = "text"  readonly/>&nbsp&nbsp&nbsp<br><br>
+
+GBP&nbsp&nbsp<input id ="value2" type = "text"  readonly/>&nbsp&nbsp&nbsp<br><br>
+EUR&nbsp&nbsp<input id ="value3" type = "text"  readonly/>&nbsp&nbsp&nbsp<br><br>
+CAD&nbsp&nbsp<input id ="value4" type = "text"  readonly/>&nbsp&nbsp&nbsp
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Strict mode</title>
+</head>
+<h1>Strict Mode</h1>
+<body>
+  <script type="text/javascript">
+    "use strict"; // whole function is in strict mode
+    var eval1 = "Yo";
+      function x () {
+        var argument1 = [1,2,3];
+      }
+      //can not delete a function
+      function del(y){
+        }
+        //delete del;
+      //can not delete a variable
+      var z = "zebra";
+      //delete z;
+      student.course = "SDN";
+      function CMPE273(course){
+        this.course = course;
+        }
+        CMPE273.course("SDS");
+        console.log(student.course);
+
+        //Using function as a constructor and not putting new keyword
+        function cmpe273(course){
+          this.course = course;
+          }
+          var a = cmpe273("Enterprise");
+
+          //Object properties - Like writting to a read only Object
+
+          var course  = {}; // defining an empty Object
+          Object.defineProperty(course, "name",{
+            writable: false, name: "SDN1"
+          });
+          course.name = "SDS1";
+          //type for eval would be undefined
+
+          eval("var d = 1");
+          console.log(typeof d);
+          //can be done using the strict mode
+
+         var obj = {
+            course1 = "SDS",
+            course2 = "SDN",
+            course3 = "EDS",
+            course4 = "MATH",
+          };
+
+          //delete obj.course1;
+          console.dir(obj);
+
+
+  </script>
+</html>

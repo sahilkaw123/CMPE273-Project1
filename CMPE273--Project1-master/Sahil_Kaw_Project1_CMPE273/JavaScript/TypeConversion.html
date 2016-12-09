@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+body {
+    background-color: skyblue;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+</style>
+
+<h2>The Numeric value is 9.54</h2>
+
+<h2>The String value is "13.44"</h2>
+
+
+<p id="demo"></p>
+
+<script>
+
+var x = 9.54;
+var y ="13.44";
+
+var z = Number(y) + x;
+var e = String(x) + y;
+document.getElementById("demo").innerHTML =
+"The String value of the Number is : "+  String(x) + "<br>" +
+"The Concatenation of Number with String  " +String(x) + y + "<br>" +
+"The Numeric value of the String is : "+ Number(y)  + "<br>" +
+
+"The sum of number and string : " + z + "<br>" +
+"Expressing Number to exponential of power(4) " + z.toExponential(4)+ "<br>" +
+"Manipulating Output to 3 digits : " + z.toFixed(3) + "<br>" +"Manipulating Output to 3 digits : " +
+    z.toFixed(6) + "<br>" +
+
+"Getting Numeric date : " +    Number(new Date()) + "<br>" +
+"Getting String date : " +      String(Date())  + "<br>" +
+"Reading the integer part of output : " +parseInt(z) + "<br>" +
+"Reading the integer part of the String  "+    parseInt(y) + "<br>"
+
+
+
+</script>
+</body>
+</html>

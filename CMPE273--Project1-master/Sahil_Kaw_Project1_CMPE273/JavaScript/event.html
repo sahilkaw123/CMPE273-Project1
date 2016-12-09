@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"
+
+      <title><center><h1 id="h3style" ondblclick="changeColor();" onmouseout="changeAgain();" > Double Click Me</center> </title>
+    </head>
+
+    <h3 onmouseover="style.color='red'" onmouseout="style.color='black'">Roll mouse over the images to magnify</h3>
+
+      <style>
+      body{
+        background-color: #808080;
+
+
+      }
+      <style>
+        #h3style
+        {
+          color: gray;
+
+        }
+      </style>
+    </head>
+
+    <body onResize ="changeImage();" onLoad="alert('WELCOME');">
+
+    <script language="javascript" type="text/JavaScript">
+        var prices = ["$25.22","$36.23","$125.23"]
+        var identity = ["Show Mouse Price","Show Keyboard Price","Show Monitor Price"]
+        function changeImage(){
+          document.getElementById("littlebrain").style.height="35%";
+          document.getElementById("littlebrain").style.width="35%";
+          return true;}
+
+
+        function bigImg(x) {
+        x.style.height = "500px";
+        x.style.width = "500px";
+        }
+
+        function normalImg(x) {
+        x.style.height = "200px";
+        x.style.width = "200px";
+        }
+
+        function changeColor(){
+          document.getElementById('h3style').style.color="red";
+          document.getElementById('h3style').firstChild.nodeValue="Welcome to Online Shopping Portal";
+          return true;
+        }
+
+        function changeAgain(){
+
+          document.getElementById('h3style').style.color="black";
+          document.getElementById('h3style').firstChild.nodeValue="Double Click Me";
+          return true;
+
+        }
+
+        function myFunction() {
+          document.getElementById("field5").value = document.getElementById("field1").value;
+          document.getElementById("field6").value = document.getElementById("field2").value;
+          document.getElementById("field7").value = document.getElementById("field3").value;
+          document.getElementById("field8").value = document.getElementById("field4").value;
+        }
+
+        function my1(){
+          var name1 = document.getElementById("field1");
+          name1.value = name1.value.toUpperCase();
+          var name2 = document.getElementById("field2");
+          name2.value = name2.value.toUpperCase();
+          var name2 = document.getElementById("field3");
+          name2.value = name2.value.toUpperCase();
+        }
+        function showprice(obj,prices){
+          obj.style.backgroundColor = "white";
+          obj.innerHTML = prices;
+        }
+        function hideprice(obj,identity){
+          obj.style.backgroundColor = "blue";
+          obj.innerHTML = identity;
+        }
+        function func1(x){
+          x.style.background = "yellow";
+        }
+
+        function func2(x){
+          x.style.background = "white";
+        }
+        function func3(){
+          var x = document.getElementById("mySelect").value;
+          if (x == "Select"){
+          document.getElementById("demo").innerHTML = "Please Select one item from the list to see the price ";
+        }
+          if (x == "Mouse"){
+          document.getElementById("demo").innerHTML = "The Price of: " + x + " is " + prices[0];
+        }
+        if (x == "Keyboard"){
+        document.getElementById("demo").innerHTML = "The Price of: " + x + " is " + prices[1];
+      }
+      if (x == "Monitor"){
+      document.getElementById("demo").innerHTML = "The Price of: " + x + " is " + prices[2];
+    }
+      }
+
+    </script>
+
+      Mouse:<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="mouse.png" id="littlebrain" width="200" height="200";/>
+      Keyboard:<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="keyboard.png" id="littlebrain" width="200" height="200";/>
+      Monitor:<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="monitor.png" id="littlebrain" width="200" height="200";/> <br><br>
+      <button onmousedown="showprice(this,prices[0])" onmouseup="hideprice(this,identity[0])"style="background-color:blue;width:250px;height:5px;padding:30px;">Show Mouse Price</button>
+      <button onmousedown="showprice(this,prices[1])" onmouseup="hideprice(this,identity[1])"style="background-color:blue;width:250px;height:5px;padding:30px;">Show Keyboard Price</button>
+      <button onmousedown="showprice(this,prices[2])" onmouseup="hideprice(this,identity[2])"style="background-color:blue;width:250px;height:5px;padding:30px;">Show Monitor Price</button><br><br>
+
+      <select id="mySelect" onchange="func3()">
+      <option value="Select">Select
+      <option value="Mouse">Mouse
+      <option value="Keyboard">Keyboard
+      <option value="Monitor">Monitor
+      </select>
+      <p id="demo"></p>
+
+      <h2>SHIPPING ADDRESS</h2>
+      First Name: <input type="text" id="field1" style="width: 300px;" onchange="my1()" onfocus="func1(this)" onblur="func2(this)"><br><br>
+      Last  Name: <input type="text" id="field2" style="width: 300px;"onchange="my1()" onfocus="func1(this)" onblur="func2(this)"><br><br>
+      Home  Add: <input type="text" id="field3" style="width: 300px;"onchange="my1()" onfocus="func1(this)" onblur="func2(this)"><br><br>
+      Zip code: <input type="text" id="field4" style="width: 100px;"onchange="my1()" onfocus="func1(this)" onblur="func2(this)"><br><br>
+
+      <h2>BILLING ADDRESS</h2>
+      <h4>If shipping and billing address are same</h4>
+      <button onclick="myFunction()">Click here</button><br><br>
+      First Name: <input type="text" id="field5" style="width: 300px;" ><br><br>
+      Last Name: <input type="text" id="field6" style="width: 300px;"><br><br>
+      Home Add: <input type="text" id="field7" style="width: 300px;"><br><br>
+      Zip code: <input type="text" id="field8" style="width: 100px;"><br><br>
+
+      <form name ="formex">
+        Mouse X Position<input type="text" name="mousex" />  <br/>
+        Mouse Y Position<input type="text" name="mousey" />  <br/>
+        Mouse button Clicked<input type="text" name="mousebutton" />  <br/>
+      </form>
+
+
+      <script language="javascript" type="text/JavaScript">
+      document.onmousemove = mousePos;
+      document.onmousedown = mouseClicked;
+
+      var mouseClick=0;
+      var mouseX = 0;
+      var mouseY = 0;
+
+      function mousePos(e){
+
+          mouseX = e.pageX;
+          mouseY = e.pageY;
+
+        document.formex.mousex.value = mouseX;
+        document.formex.mousey.value = mouseY;
+        return true;
+      }
+
+      function mouseClicked(e){
+        switch(e.which){
+          case 1:
+          document.formex.mousebutton.value = "Left";
+          break;
+          case2:
+          document.formex.mousebutton.value = "Middle";
+          break;
+          case 3:
+          document.formex.mousebutton.value = "Right";
+          break;
+        }
+        return true;
+      }
+
+
+
+</script>
+    </body>
+</html>

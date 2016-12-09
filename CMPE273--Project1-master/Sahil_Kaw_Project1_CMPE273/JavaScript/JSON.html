@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Data of Country and Language</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = '{"name":"language spoken",'+
+'"Record":[' +
+'{"Country":"USA",'+
+'"Language":"English" },' +
+'{"Country":"England",'+
+'"Language":"English" },' +
+'{"Country":"China",'+
+'"Language":"Chinese" },' +
+'{"Country":"India",'+
+'"Language":"Hindi" },' +
+'{"Country":"France",' +
+'"Language":"French" },' +
+'{"Country":"German","Language":"Germany" },' +
+'{"Country":"Japan","Language":"Japanese" }]}';
+
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML =
+obj.name + " " + obj.Record[0].Language + "<br>" +
+obj.Record[0].Country + " speaks " + obj.Record[0].Language +"<br>" +
+obj.Record[1].Country + " speaks " + obj.Record[1].Language+ "<br>" +
+obj.Record[2].Country + " speaks " + obj.Record[2].Language +"<br>" +
+obj.Record[3].Country + " speaks " + obj.Record[3].Language + "<br>" +
+obj.Record[4].Country + " speaks " + obj.Record[4].Language
+</script>
+
+</body>
+</html>

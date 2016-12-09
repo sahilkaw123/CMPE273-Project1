@@ -1,0 +1,115 @@
+<html>
+
+
+      <meta charset="utf-8">
+      <title>Input Types</title>
+<head><h1><center>Job Application Form
+</center></h1></head>
+<style>
+body {
+    background-color: yellow;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+</style>
+
+   <body>
+
+
+<form>
+
+<div>
+  First Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="fname" autofocus required />&nbsp&nbsp&nbsp&nbsp&nbsp
+
+ Last Name&nbsp
+  <input type ="text" name="lname" required/>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+  Login Id/Email
+<input type ="email" name="uname" required/>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+Password &nbsp&nbsp&nbsp
+<input type="password" name="psw" required>
+</div>
+
+<div>
+Mobile &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="tel" name="tel" pattern="[0-9]*" id="tel" required>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+E-mail:
+  <input type="email" name="email" required>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+DOB &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input id="startdate" name="startdate" min="2012-01-01" max="2013-01-01" type="date">
+</div><br>
+<div>
+Years of Experience<br>
+Year
+<input type="number" name="quantity"
+   min="0" max="50" step="1" value="0">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+Months
+<input type="number" name="quantity2"
+   min="0" max="11" step="1" value="0">
+</div><br>
+
+<div>
+Github link:
+<input type="url" name="github">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+Linkedin link:
+<input type="url" name="linkdn">
+</div><br>
+<div>
+  Role Applying for<br>
+<input type="checkbox" name="SSP" value="Bike"> Backend developer<br>
+  <input type="checkbox" name="SSp2" value="Car"> UI/UX<br>
+<input type="checkbox" name="SSp3" value=""> Front-end developer<br>
+</div><br>
+
+<div>
+Rate yourself in Java
+<input id="skill" type="range" min="1" max="5" value="0">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+
+  Rate yourself in NodeJs
+  <input id="skill" type="range" min="1" max="5" value="0">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+  Rate yourself in JavaScript
+  <input id="skill" type="range" min="1" max="5" value="0">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <div><br>
+
+
+<div>
+Race Chose One&nbsp&nbsp&nbsp&nbsp
+<input type="radio" name="race1" value="race"> Asian&nbsp&nbsp
+<input type="radio" name="race1" value="race"> Anglo-American&nbsp&nbsp&nbsp&nbsp
+<input type="radio" name="race1" value="race"> Not wish to disclose&nbsp&nbsp&nbsp&nbsp
+</div><br>
+
+<div>
+Gender&nbsp&nbsp&nbsp&nbsp
+  <input type="radio" name="disability1" value="yes1"> Male&nbsp&nbsp&nbsp&nbsp
+<input type="radio" name="disability1" value="no1"> Female&nbsp&nbsp&nbsp&nbsp
+</div><br>
+
+  <input type="submit" value="Submit" >
+
+<input type="reset">
+</div>
+
+
+</form>
+
+   </body>
+</html>

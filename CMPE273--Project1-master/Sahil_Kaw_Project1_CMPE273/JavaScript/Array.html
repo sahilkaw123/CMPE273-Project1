@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+		<html>
+		<head>
+		<title></title>
+		<script>
+		var userNames = ["sahil"];
+		var temp;
+
+		function reg()
+
+		{
+
+		var newName = document.getElementById("txtName").value.toLowerCase();
+
+		var message = "";
+
+		var result = document.getElementById("result");
+
+		var success = false;
+
+		if (newName == "")
+
+		{
+
+		alert("Please, enter a Username");
+
+		return false;
+
+		}
+
+		for (var i = 0; i < userNames.length; i++)
+
+		{
+
+		if (userNames[i] == newName)
+
+		{
+
+		message = "Sorry, the Username " + userNames[i] + " already exists.  Try again";
+
+		result.innerHTML = message;
+
+		success = false;
+
+		return false;
+
+		}
+
+		else
+
+		{
+
+		message = "Great, you've successfully registered with us as " + newName;
+
+		result.innerHTML = message;
+
+		success = true;
+
+		}
+
+		}
+
+		if (success)
+
+		{
+
+		userNames.push(newName);
+
+		}
+
+		result.innerHTML += "<br />" + userNames.sort();
+
+		}
+
+		function showAll() {
+			result.innerHTML += "<br />" + userNames.sort();
+		}
+
+
+
+
+		function del() {
+
+			var delName = document.getElementById("delt").value.toLowerCase();
+
+			var message = "";
+
+			var result = document.getElementById("result");
+
+			var success1 = false;
+
+			if (delName == "")
+
+			{
+
+			alert("Please, enter a Username to delete");
+
+			return false;
+
+			}
+
+			for (var i = 0; i < userNames.length; i++)
+
+			{
+
+			if (userNames[i] == delName)
+
+			{
+				temp = userNames[0];
+				userNames[0] = userNames[i];
+				userNames[i] = temp;
+
+			message = "Great, you've successfully deleted" + " "+delName;
+			result.innerHTML = message;
+			userNames.shift();
+			result.innerHTML += "<br />" + userNames.sort();
+			//success1 = true;
+
+			return true;
+
+			}
+
+			else
+
+			{
+
+			message = "Sorry, the Username " + delName + " doesnot exists.  Try again";
+
+
+			result.innerHTML = message;
+
+			success1 = false;
+
+			}
+
+			}
+
+
+
+
+			}
+
+
+		</script>
+		</head>
+		<body>
+		<h1><center>Arrays Example</center></h1>
+
+		<p>Register a Username: <input type="text" id="txtName" /> </p>
+
+		<p><input type="button" id="btnSubmit" value="Register" onclick="reg()";/></p>
+		<p>Delete a User: <input type="text" id="delt" /> </p>
+		<p><input type="button" id="delt" value="Delete" onclick="del()"; /></p>
+		<p><input type="button" id="show" value="Show All Users" onclick="showAll()";/></p>
+		<p id="result"></p>
+		</body>
+		</html>

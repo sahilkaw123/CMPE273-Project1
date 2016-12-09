@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Regular Expression Check</title>
+  <style type="text/css">
+    .container {
+        width: 300px;
+        clear: both;
+        font-size:14pt;
+    }
+    .container input {
+        width: 100%;
+        clear: both;
+    }
+    </style>
+
+
+</head>
+<h1> Regular Expression Check</h1>
+<body>
+  <script >
+
+ //validate the Name field
+  function validN(){
+
+    var name = document.getElementById('Name').value;
+
+    if(name.length == 0){
+
+      display("First name cannot be blank", "Error_msg");
+      return false;
+    }
+    if(!name.match(/^[A-Za-z]*$/)){
+      display("First Name must be alphabet", "Error_msg");
+      return false;
+
+  }
+  else{
+    return true;
+  }
+
+}
+  function validLN(){
+
+    var lname = document.getElementById("LName").value;
+
+    if (lname.length == 0) {
+      display("Last Name can not be empty", "Error_msg1");
+      return false;
+    }
+
+    if(!lname.match(/^[A-Za-z]*$/)){
+      display("Last Name must be alphabet", "Error_msg1");
+      return false;
+    }
+    else{
+      return true;
+    }
+
+  }
+
+  function validP(){
+
+    var phone = document.getElementById("Phone").value;
+
+    if(phone.length == 0){
+      display("Phone Number can not be empty", "Error_msg2");
+      return false;
+    }
+    //if(!phone.match(/^(\+\d)*\s*(\(\d{3}\)\s*)*\d{3}(-{0,1}|\s{0,1})\d{2}(-{0,1}|\s{0,1})\d{2}$/)){
+     //display("Phone number should have digits only", "Error_msg2");
+    //  return false;
+    //}
+    else{
+      return true;
+    }
+  }
+
+    function validE(){
+      var email = document.getElementById("Email").value;
+      if (email.length == 0) {
+        display("Email can not be blank","Error_msg3");
+        return false;
+    }
+    if (!email.match(/^[A-Za-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})(:[0-9]{1,5})?$/)){
+      display("Email is not correct", "Error_msg3");
+      return false;
+
+    }
+    display("valid email address","Error_msg3");
+    return true;
+  }
+
+
+  function display(message, location){
+
+    document.getElementById(location).innerHTML = message;
+
+  }
+
+  function validU(){
+    var user = document.getElementById('User').value;
+    if(user.length ==0) {
+      display("Please enter the userName", "Error_msg4");
+      return false;
+    }
+    if(!user.match(/^[A-Za-z0-9]*$/)){
+      display("The UserName can be combination of Alphabet and Numbers", "Error_msg4");
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
+  function validPwd(){
+    var passwd = document.getElementById('Pwd').value;
+    if(passwd.length == 0){
+      display("Please enter the Password", "Error_msg5");
+      return false;
+    }
+    if(!passwd.match(/^[A-Za-z0-9~!$%^&*_\'?]*$/)){
+      display("Password can have alphabet, digits and ~!$%^&*_=+ special characters", "Error_msg5");
+      return false;
+
+    }
+    else{
+      return true;
+    }
+  }
+
+  function validateform(){
+    if (!validN()|| !validLN() || !validP() || !validE() || !validU() || !validPwd()){
+      display("You have errors in the form" , "Error_msg6");
+      setTimeout(function(){hide("Error_msg6");}, 2000);
+    }
+  }
+
+  function hide(){
+    document.getElementById(id).style.display = "none";
+  }
+
+  //test function - just for testing  my code
+  function validA() {
+      var x = document.getElementById("Name").value;
+
+
+      x.value = x.value.toUpperCase();
+  }
+  //
+
+  </script>
+  <div class="container"/>
+<form>
+  Name<input id="Name" type ="text" onkeyup="validN()"/><label id="Error_msg"></label></br>
+  LName<input id="LName" type ="text" onkeyup="validLN()"/><label id="Error_msg1"></label></br>
+  Phone Number<input id="Phone" type ="text" onkeyup="validP()"/><label id="Error_msg2"></label></br>
+  Email <input id="Email" type ="text" onkeyup="validE()"/><label id="Error_msg3"></label></br>
+  UserName <input id ="User"  onkeyup="validU()"/><label id="Error_msg4"></label></br>
+  Password <input id ="Pwd"  onkeyup="validPwd()"/><label id="Error_msg5"></label></br></br></br>
+</form>
+</div>
+<div>
+  <button onclick="validateform()">Submit Form</button><label id="Error_msg6" </label></br>
+</div>
+</body>
+</html>
